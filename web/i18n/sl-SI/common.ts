@@ -175,7 +175,7 @@ const translation = {
   account: {
     account: 'Račun',
     myAccount: 'Moj račun',
-    studio: 'Dify Studio',
+    studio: 'X-Studio',
     avatar: 'Avatar',
     name: 'Ime',
     email: 'E-pošta',
