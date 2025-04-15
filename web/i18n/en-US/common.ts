@@ -122,7 +122,7 @@ const translation = {
       maxTokenSettingTip: 'Your max token setting is high, potentially limiting space for prompts, queries, and data. Consider setting it below 2/3.',
       setToCurrentModelMaxTokenTip: 'Max token is updated to the 80% maximum token of the current model {{maxToken}}.',
       stop_sequences: 'Stop sequences',
-      stop_sequencesTip: 'Up to four sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.',
+      stop_sequencesTip: 'Up to four sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.',
       stop_sequencesPlaceholder: 'Enter sequence and press Tab',
     },
     tone: {
@@ -147,6 +147,8 @@ const translation = {
     newApp: 'New App',
     newDataset: 'Create Knowledge',
     tools: 'Tools',
+    training: 'Training',
+    trainingDatasets: 'Training Datasets',
   },
   userProfile: {
     settings: 'Settings',
@@ -193,7 +195,7 @@ const translation = {
     name: 'Name',
     email: 'Email',
     password: 'Password',
-    passwordTip: 'You can set a permanent password if you don’t want to use temporary login codes',
+    passwordTip: "You can set a permanent password if you don't want to use temporary login codes",
     setPassword: 'Set a password',
     resetPassword: 'Reset password',
     currentPassword: 'Current password',

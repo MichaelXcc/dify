@@ -56,7 +56,7 @@ const Marketplace = ({
         className='absolute left-1/2 top-2 h-4 w-4 -translate-x-1/2 cursor-pointer text-text-quaternary'
         onClick={() => onMarketplaceScroll()}
       />
-      <div className='sticky top-0 z-10 bg-background-default-subtle pb-3 pt-5'>
+      {/* <div className='sticky top-0 z-10 bg-background-default-subtle pb-3 pt-5'>
         <div className='title-2xl-semi-bold bg-gradient-to-r from-[rgba(11,165,236,0.95)] to-[rgba(21,90,239,0.95)] bg-clip-text text-transparent'>
           {t('plugin.marketplace.moreFrom')}
         </div>
@@ -91,7 +91,7 @@ const Marketplace = ({
             <RiArrowRightUpLine className='h-4 w-4' />
           </a>
         </div>
-      </div>
+      </div> */}
       {
         isLoading && page === 1 && (
           <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>

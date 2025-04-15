@@ -49,11 +49,11 @@ const ExternalAPIPanel: React.FC<ExternalAPIPanelProps> = ({ onClose }) => {
         <div className='flex items-start self-stretch p-4 pb-0'>
           <div className='flex grow flex-col items-start gap-1'>
             <div className='system-xl-semibold self-stretch text-text-primary'>{t('dataset.externalAPIPanelTitle')}</div>
-            <div className='body-xs-regular self-stretch text-text-tertiary'>{t('dataset.externalAPIPanelDescription')}</div>
-            <a className='flex cursor-pointer items-center justify-center gap-1 self-stretch' href='https://docs.dify.ai/guides/knowledge-base/external-knowledge-api-documentation' target='_blank'>
-              <RiBookOpenLine className='h-3 w-3 text-text-accent' />
-              <div className='body-xs-regular grow text-text-accent'>{t('dataset.externalAPIPanelDocumentation')}</div>
-            </a>
+            {/* <div className='body-xs-regular self-stretch text-text-tertiary'>{t('dataset.externalAPIPanelDescription')}</div> */}
+            {/* <a className='flex cursor-pointer items-center justify-center gap-1 self-stretch' href='https://docs.dify.ai/guides/knowledge-base/external-knowledge-api-documentation' target='_blank'> */}
+              {/* <RiBookOpenLine className='h-3 w-3 text-text-accent' /> */}
+              {/* <div className='body-xs-regular grow text-text-accent'>{t('dataset.externalAPIPanelDocumentation')}</div> */}
+            {/* </a> */}
           </div>
           <div className='flex items-center'>
             <ActionButton onClick={() => onClose()}>

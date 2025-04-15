@@ -11,6 +11,8 @@ import EnvNav from './env-nav'
 import PluginsNav from './plugins-nav'
 import ExploreNav from './explore-nav'
 import ToolsNav from './tools-nav'
+import TrainingNav from './training-nav'
+import TrainingDatasetNav from './training-dataset-nav'
 import { WorkspaceProvider } from '@/context/workspace-context'
 import { useAppContext } from '@/context/app-context'
 import LogoSite from '@/app/components/base/logo/logo-site'
@@ -89,6 +91,8 @@ const Header = () => {
             {!isCurrentWorkspaceDatasetOperator && <AppNav />}
             {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
             {!isCurrentWorkspaceDatasetOperator && <ToolsNav className={navClassName} />}
+            {!isCurrentWorkspaceDatasetOperator && <TrainingNav className={navClassName} />}
+            {!isCurrentWorkspaceDatasetOperator && <TrainingDatasetNav className={navClassName} />}
           </div>
         )
       }
@@ -106,6 +110,8 @@ const Header = () => {
             {!isCurrentWorkspaceDatasetOperator && <AppNav />}
             {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
             {!isCurrentWorkspaceDatasetOperator && <ToolsNav className={navClassName} />}
+            {!isCurrentWorkspaceDatasetOperator && <TrainingNav className={navClassName} />}
+            {!isCurrentWorkspaceDatasetOperator && <TrainingDatasetNav className={navClassName} />}
           </div>
         )
       }

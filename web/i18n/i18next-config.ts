@@ -16,6 +16,18 @@ const requireSilent = (lang: string) => {
   return res
 }
 
+const requireTrainingSilent = (lang: string) => {
+  let res
+  try {
+    res = require(`./${lang}/training`).default
+  }
+  catch {
+    res = require('./zh-Hans/training').default
+  }
+
+  return res
+}
+
 const loadLangResources = (lang: string) => ({
   translation: {
     common: require(`./${lang}/common`).default,
@@ -44,6 +56,7 @@ const loadLangResources = (lang: string) => ({
     pluginTags: require(`./${lang}/plugin-tags`).default,
     time: require(`./${lang}/time`).default,
     education: requireSilent(lang),
+    training: requireTrainingSilent(lang),
   },
 })
 
