@@ -9,7 +9,7 @@ interface ConnectPanelProps {
 
 export default function ConnectPanel({ onConnect }: ConnectPanelProps) {
   const { t } = useTranslation()
-  const [url, setUrl] = useState('http://localhost:7860')
+  const [url, setUrl] = useState('http://0.0.0.0:7860')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -47,7 +47,7 @@ export default function ConnectPanel({ onConnect }: ConnectPanelProps) {
               type="text"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              placeholder="http://localhost:7860"
+              placeholder="http://localhost"
               className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
@@ -62,13 +62,13 @@ export default function ConnectPanel({ onConnect }: ConnectPanelProps) {
               {isLoading ? t('training.connection.connecting') : t('training.connection.connect')}
             </button>
             
-            <div className="border-t pt-4">
-              <h3 className="font-medium mb-2">{t('training.connection.startServer')}</h3>
-              <p className="text-sm text-gray-600 mb-2">{t('training.connection.startServerTip')}</p>
-              <div className="bg-gray-50 p-3 rounded text-sm font-mono">
+            {/* <div className="border-t pt-4"> */}
+              {/* <h3 className="font-medium mb-2">{t('training.connection.startServer')}</h3> */}
+              {/* <p className="text-sm text-gray-600 mb-2">{t('training.connection.startServerTip')}</p> */}
+              {/* <div className="bg-gray-50 p-3 rounded text-sm font-mono">
                 cd factory/llamafactory && python -m webui.app --listen
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </div>
         </div>
       </div>

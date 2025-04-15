@@ -63,7 +63,7 @@ const translation = {
     connectionFailed: 'Connection Failed',
     connectToServer: 'Connect to Training Server',
     serverAddress: 'Server Address',
-    serverAddressPlaceholder: 'e.g., http://localhost:7860',
+    serverAddressPlaceholder: 'e.g., http://ip:port',
     connect: 'Connect',
     connecting: 'Connecting...',
     invalidURL: 'Invalid URL',

@@ -57,7 +57,7 @@ const PluginPage = ({
   const searchParams = useSearchParams()
   const { replace } = useRouter()
 
-  document.title = `${t('plugin.metadata.title')} - Dify`
+  document.title = `${t('plugin.metadata.title')} - X Studio`
 
   // just support install one package now
   const packageId = useMemo(() => {

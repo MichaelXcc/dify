@@ -65,7 +65,7 @@ const translation = {
     connectionFailed: '连接失败',
     connectToServer: '连接到训练服务器',
     serverAddress: '服务器地址',
-    serverAddressPlaceholder: '例如: http://localhost:7860',
+    serverAddressPlaceholder: '例如: http://ip:port',
     connect: '连接',
     connecting: '连接中...',
     invalidURL: '无效的URL地址',
