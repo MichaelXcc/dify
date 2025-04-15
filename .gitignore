@@ -197,7 +197,6 @@ api/.vscode
 
 .idea/
 .vscode
-.dataset/*
 
 # pnpm
 /.pnpm-store
@@ -207,4 +206,4 @@ plugins.jsonl
 
 # mise
 mise.toml
-/dataset
+
