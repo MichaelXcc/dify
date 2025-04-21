@@ -255,7 +255,7 @@ const Documents: FC<IDocumentsProps> = ({ datasetId }) => {
     <div className='flex h-full flex-col overflow-y-auto'>
       <div className='flex flex-col justify-center gap-1 px-6 pt-4'>
         <h1 className='text-base font-semibold text-text-primary'>{t('datasetDocuments.list.title')}</h1>
-        <div className='flex items-center space-x-0.5 text-sm font-normal text-text-tertiary'>
+        {/* <div className='flex items-center space-x-0.5 text-sm font-normal text-text-tertiary'>
           <span>{t('datasetDocuments.list.desc')}</span>
           <a
             className='flex items-center text-text-accent'
@@ -264,7 +264,7 @@ const Documents: FC<IDocumentsProps> = ({ datasetId }) => {
             <span>{t('datasetDocuments.list.learnMore')}</span>
             <RiExternalLinkLine className='h-3 w-3' />
           </a>
-        </div>
+        </div> */}
       </div>
       <div className='flex flex-1 flex-col px-6 py-4'>
         <div className='flex flex-wrap items-center justify-between'>

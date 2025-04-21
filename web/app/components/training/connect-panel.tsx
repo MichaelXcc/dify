@@ -9,7 +9,7 @@ interface ConnectPanelProps {
 
 export default function ConnectPanel({ onConnect }: ConnectPanelProps) {
   const { t } = useTranslation()
-  const [url, setUrl] = useState('http://0.0.0.0:7860')
+  const [url, setUrl] = useState('http://localhost:7860')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -23,14 +23,25 @@ export default function ConnectPanel({ onConnect }: ConnectPanelProps) {
     setError('')
 
     try {
-      // 这里可以添加一个状态检查，尝试请求URL看是否可以访问
-      // 但简单起见，我们直接调用onConnect
-      setTimeout(() => {
-        onConnect(url)
-        setIsLoading(false)
-      }, 1000)
+      // 使用一个简单的超时方式检测URL
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      
+      // 尝试ping该URL，不关心结果，只关心能否连接
+      await fetch(url, { 
+        mode: 'no-cors',  // 避免CORS错误
+        signal: controller.signal,
+        cache: 'no-cache'
+      });
+      clearTimeout(timeoutId);
+      
+      // 如果能够到达这里，说明至少没有立即失败
+      onConnect(url);
     } catch (e) {
-      setError(t('training.connectionFailed'))
+      console.log('Connection error:', e);
+      // 连接失败，显示错误信息
+      setError(t('training.invalidIPAddress'))
+    } finally {
       setIsLoading(false)
     }
   }
@@ -47,7 +58,6 @@ export default function ConnectPanel({ onConnect }: ConnectPanelProps) {
               type="text"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              placeholder="http://localhost"
               className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
