@@ -24,7 +24,7 @@ export default function TrainingDatasetsPage() {
   return (
     <div className="w-full h-full">
       <iframe 
-        src="http://0.0.0.0:1717/" 
+        src="http://192.168.2.221:1717/" 
         className="w-full border-none"
         style={{ height: iframeHeight }}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
