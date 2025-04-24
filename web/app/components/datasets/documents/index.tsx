@@ -29,6 +29,8 @@ import { useChildSegmentListKey, useSegmentListKey } from '@/service/knowledge/u
 import useEditDocumentMetadata from '../metadata/hooks/use-edit-dataset-metadata'
 import DatasetMetadataDrawer from '../metadata/metadata-dataset/dataset-metadata-drawer'
 import StatusWithAction from '../common/document-status-with-action/status-with-action'
+import { LanguagesSupported } from '@/i18n/language'
+import { getLocaleOnClient } from '@/i18n'
 
 const FolderPlusIcon = ({ className }: React.SVGProps<SVGElement>) => {
   return <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className={className ?? ''}>
@@ -98,7 +100,7 @@ const Documents: FC<IDocumentsProps> = ({ datasetId }) => {
   const isDataSourceWeb = dataset?.data_source_type === DataSourceType.WEB
   const isDataSourceFile = dataset?.data_source_type === DataSourceType.FILE
   const embeddingAvailable = !!dataset?.embedding_available
-
+  const locale = getLocaleOnClient()
   const debouncedSearchValue = useDebounce(searchValue, { wait: 500 })
 
   const { data: documentsRes, isFetching: isListLoading } = useDocumentList({
@@ -255,6 +257,21 @@ const Documents: FC<IDocumentsProps> = ({ datasetId }) => {
     <div className='flex h-full flex-col overflow-y-auto'>
       <div className='flex flex-col justify-center gap-1 px-6 pt-4'>
         <h1 className='text-base font-semibold text-text-primary'>{t('datasetDocuments.list.title')}</h1>
+        <div className='flex items-center space-x-0.5 text-sm font-normal text-text-tertiary'>
+          <span>{t('datasetDocuments.list.desc')}</span>
+          <a
+            className='flex items-center text-text-accent'
+            target='_blank'
+            href={
+              locale === LanguagesSupported[1]
+                ? 'https://docs.dify.ai/v/zh-hans/guides/knowledge-base/integrate-knowledge-within-application'
+                : 'https://docs.dify.ai/guides/knowledge-base/integrate-knowledge-within-application'
+            }
+            >
+            <span>{t('datasetDocuments.list.learnMore')}</span>
+            <RiExternalLinkLine className='h-3 w-3' />
+          </a>
+        </div>
       </div>
       <div className='flex flex-1 flex-col px-6 py-4'>
         <div className='flex flex-wrap items-center justify-between'>
