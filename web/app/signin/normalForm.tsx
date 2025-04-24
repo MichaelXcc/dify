@@ -185,19 +185,19 @@ const NormalForm = () => {
             </div>
           </>}
           <div className="system-xs-regular mt-2 block w-full text-text-tertiary">
-            {t('login.tosDesc')}
-            &nbsp;
+            {/* {t('login.tosDesc')} */}
+            {/* &nbsp;
             <Link
               className='system-xs-medium text-text-secondary hover:underline'
               target='_blank' rel='noopener noreferrer'
               href='https://dify.ai/terms'
             >{t('login.tos')}</Link>
-            &nbsp;&&nbsp;
-            <Link
+            &nbsp;&&nbsp; */}
+            {/* <Link
               className='system-xs-medium text-text-secondary hover:underline'
               target='_blank' rel='noopener noreferrer'
               href='https://dify.ai/privacy'
-            >{t('login.pp')}</Link>
+            >{t('login.pp')}</Link> */}
           </div>
           {IS_CE_EDITION && <div className="w-hull system-xs-regular mt-2 block text-text-tertiary">
             {t('login.goToInit')}

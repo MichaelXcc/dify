@@ -1,7 +1,7 @@
 # Variables
-DOCKER_REGISTRY=langgenius
-WEB_IMAGE=$(DOCKER_REGISTRY)/dify-web
-API_IMAGE=$(DOCKER_REGISTRY)/dify-api
+DOCKER_REGISTRY=lexun
+WEB_IMAGE=$(DOCKER_REGISTRY)/xstudio-web
+API_IMAGE=$(DOCKER_REGISTRY)/xstudio-api
 VERSION=latest
 
 # Build Docker images
