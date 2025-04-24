@@ -9,7 +9,7 @@ interface ConnectPanelProps {
 
 export default function ConnectPanel({ onConnect }: ConnectPanelProps) {
   const { t } = useTranslation()
-  const [url, setUrl] = useState('http://localhost:7860')
+  const [url, setUrl] = useState('http://192.168.2.221:7860')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 

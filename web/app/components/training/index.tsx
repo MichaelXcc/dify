@@ -19,7 +19,7 @@ export default function Training() {
   const [selectedModel, setSelectedModel] = useState('')
   const [selectedDataset, setSelectedDataset] = useState('')
   const iframeRef = useRef<HTMLIFrameElement>(null)
-  const [serverUrl, setServerUrl] = useState('http://localhost:7860')
+  const [serverUrl, setServerUrl] = useState('http://192.168.2.221:7860')
 
   const handleConnect = (url: string) => {
     setServerUrl(url)
