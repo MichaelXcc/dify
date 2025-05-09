@@ -13,6 +13,7 @@ import Datasets from './Datasets'
 import DatasetFooter from './DatasetFooter'
 import ApiServer from '../../components/develop/ApiServer'
 import Doc from './Doc'
+import Persistent from '@/app/components/persistent'
 import TabSliderNew from '@/app/components/base/tab-slider-new'
 import TagManagementModal from '@/app/components/base/tag-management'
 import TagFilter from '@/app/components/base/tag-management/filter'
@@ -43,6 +44,7 @@ const Container = () => {
   const options = useMemo(() => {
     return [
       { value: 'dataset', text: t('dataset.datasets') },
+      { value: 'persistent', text: '持久化' },
       ...(currentWorkspace.role === 'dataset_operator' ? [] : [{ value: 'api', text: t('dataset.datasetsApi') }]),
     ]
   }, [currentWorkspace.role, t])
@@ -55,7 +57,7 @@ const Container = () => {
     {
       queryKey: ['datasetApiBaseInfo'],
       queryFn: () => fetchDatasetApiBaseUrl('/datasets/api-base-info'),
-      enabled: activeTab !== 'dataset',
+      enabled: activeTab !== 'dataset' && activeTab !== 'persistent',
     },
   )
 
@@ -130,6 +132,9 @@ const Container = () => {
             <TagManagementModal type='knowledge' show={showTagManagementModal} />
           )}
         </>
+      )}
+      {activeTab === 'persistent' && (
+        <Persistent />
       )}
       {activeTab === 'api' && data && <Doc apiBaseUrl={data.api_base_url || ''} />}
 
